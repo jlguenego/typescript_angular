@@ -4,7 +4,8 @@
   "description": "Exemple angular avec Typescript pour Orsys",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "keywords": [
     "angular",
@@ -14,6 +15,7 @@
   "author": "Jean-Louis GUENEGO",
   "license": "ISC",
   "devDependencies": {
+    "systemjs": "0.20.12",
     "typescript": "2.2.2"
   }
 }
