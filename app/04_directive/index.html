@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
-	<head>
-		<title>My First Angular directive</title>
-	</head>
-	<body>
-		<p>Note: c'est bien d'utiliser --allow-file-access-from-files</p>
-		<my-first-directive>Hello World!</my-first-directive>
-		<script src="../../node_modules/angular/angular.min.js"></script>
-		<script src="app.js"></script>
-	</body>
+
+<head>
+	<title>My First Angular directive</title>
+</head>
+
+<body>
+	<p>Note: c'est bien d'utiliser --allow-file-access-from-files</p>
+	<my-first-directive>Hello World!</my-first-directive>
+	<script src="../../node_modules/systemjs/dist/system.js"></script>
+	<script src="../system.config.js"></script>
+	<script>
+		SystemJS.import('main.js');
+	</script>
+</body>
+
 </html>
