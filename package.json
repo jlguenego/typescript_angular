@@ -1,0 +1,19 @@
+{
+  "name": "typescript_angular",
+  "version": "0.0.1",
+  "description": "Exemple angular avec Typescript pour Orsys",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "typescript",
+    "orsys"
+  ],
+  "author": "Jean-Louis GUENEGO",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "2.2.2"
+  }
+}
