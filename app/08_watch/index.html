@@ -5,10 +5,14 @@
 	<title>Watch example</title>
 </head>
 
-<body ng-controller="MyController as ctrl">
-	Name: <input ng-model="name" />
-	<p>Name: {{ name }}</p>
-	<p>Last update of name: {{lastUpdate | date:'medium'}}</p>
+<body ng-controller="MyController as $ctrl">
+	Name: <input ng-model="$ctrl.name" />
+	<p>Name: {{ $ctrl.name }}</p>
+	<p>Last update of name: {{$ctrl.lastUpdate | date:'medium'}}</p>
+	<hr/>
+	<ul>
+		<li>Angular is brought by SystemJS as a module. So we can use ng-app.</li>
+	</ul>
 	<script src="../../node_modules/systemjs/dist/system.src.js"></script>
 	<script src="../system.ts.config.js"></script>
 	<script>

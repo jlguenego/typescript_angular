@@ -4,10 +4,16 @@ declare var angular: angular.IAngularStatic;
 
 var app = angular.module('myApp', []);
 
-app.controller('MyController', ['$scope', function ($scope) {
-	$scope.lastUpdate = undefined;
-	$scope.$watch('name', function () {
-		$scope.lastUpdate = new Date();
-	});
-}]);
+class MyController {
+	static $inject = ['$scope'];
+	lastUpdate: Date;
+	constructor($scope: ng.IScope) {
+		this.lastUpdate = undefined;
+		$scope.$watch('$ctrl.name', () => {
+			this.lastUpdate = new Date();
+		});
+	}
+}
+
+app.controller('MyController', MyController);
 
