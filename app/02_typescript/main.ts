@@ -4,6 +4,10 @@
 	console.log('Hello World!');
 
 	class Animal {
+		static nbr: number = 0;
+		constructor() {
+			Animal.nbr++;
+		}
 		eat() {
 			console.log('miam miam slurp slurp...');
 		}
@@ -23,6 +27,9 @@
 	garfield.sleep();
 	garfield.eat();
 	// garfield = 3;
+	var grominet: Cat = new Cat();
+	var leRoiLion: Animal = new Animal();
+	console.log('Number of instanciated Animals: ', Animal.nbr);
 
 	function myTest() {
 		// eslint-disable-next-line no-use-before-define

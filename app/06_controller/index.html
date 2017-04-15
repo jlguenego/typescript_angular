@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>My First Controller</title>
+</head>
+
+<body ng-app="myApp" ng-controller="MyController as my_ctrl">
+	<h1>{{my_ctrl.person.lastname}}</h1>
+	<h2>{{my_ctrl.person.firstname}}</h2>
+	<p>{{my_ctrl.person.age}}</p>
+	<div ng-controller="MySecondController as $ctrl">
+		<h1 style="color: red">{{$ctrl.hello}}</h1>
+	</div>
+	<hr/>
+	<h1>Questions</h1>
+	<ul>
+		<li>Pourquoi peut-on utiliser un démarrage avec le ng-app dans cet exemple et pas dans l'exemple 04_directive ?</li>
+		<li>Comment la librairie angular est elle retrouvée par SystemJS ?</li>
+		<li>Pourquoi spécifier une classe au niveau du controller marche t'il avec TypeScript ?</li>
+	</ul>
+	<script src="../../node_modules/systemjs/dist/system.js"></script>
+	<script src="../system.config.js"></script>
+	<script>
+		SystemJS.import('main.js');
+	</script>
+
+</body>
+
+</html>
