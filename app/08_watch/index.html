@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+	<title>Watch example</title>
+</head>
+
+<body ng-controller="MyController as ctrl">
+	Name: <input ng-model="name" />
+	<p>Name: {{ name }}</p>
+	<p>Last update of name: {{lastUpdate | date:'medium'}}</p>
+	<script src="../../node_modules/systemjs/dist/system.js"></script>
+	<script src="../system.config.js"></script>
+	<script>
+		SystemJS.import('main.js');
+	</script>
+</body>
+
+</html>

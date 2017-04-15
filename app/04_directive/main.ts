@@ -22,7 +22,7 @@ app.directive('myFirstDirective', function () {
 // This is very convenient for developers...
 //app.controller();
 
-// with the systemjs we cannot start angular with traditional  ng-app.
+// in this case we cannot start angular with traditional  ng-app.
 // so this is the manual way to do it.
 angular.element(function () {
     angular.bootstrap(document, ['myApp']);

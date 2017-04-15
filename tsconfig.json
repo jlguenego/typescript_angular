@@ -6,9 +6,17 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [ "es2015", "dom" ],
+    "lib": ["es2015", "dom"],
     "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true,
     "alwaysStrict": true
-  }
+  },
+  "include": [
+    "app/01_*/**/*.ts",
+    "app/02_*/**/*.ts",
+    "app/03_*/**/*.ts",
+    "app/04_*/**/*.ts",
+    "app/05_*/**/*.ts",
+    "app/06_*/**/*.ts"
+  ]
 }
