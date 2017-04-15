@@ -9,10 +9,17 @@
 	Name: <input ng-model="name" />
 	<p>Name: {{ name }}</p>
 	<p>Last update of name: {{lastUpdate | date:'medium'}}</p>
-	<script src="../../node_modules/systemjs/dist/system.js"></script>
-	<script src="../system.config.js"></script>
+	<script src="../../node_modules/systemjs/dist/system.src.js"></script>
+	<script src="../system.ts.config.js"></script>
 	<script>
-		SystemJS.import('main.js');
+		SystemJS
+			.import('./main.ts')
+			.then(function(response) {
+				console.log('response', response);
+			})
+			.catch(function(error) {
+				console.error('error while loading systemjs file: ', error);
+			});
 	</script>
 </body>
 
