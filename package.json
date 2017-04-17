@@ -28,10 +28,11 @@
   "jspm": {
     "configFile": "jspm.config.js",
     "dependencies": {
-      "angular": "github:angular/bower-angular@^1.6.4",
+      "angular": "github:angular/bower-angular@^1.6.4"
+    },
+    "devDependencies": {
       "ts": "github:frankwallis/plugin-typescript@^7.0.6",
       "typescript": "npm:typescript@^2.2.2"
-    },
-    "devDependencies": {}
+    }
   }
 }

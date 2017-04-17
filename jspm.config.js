@@ -8,10 +8,10 @@ System.config({
   },
 
   packages: {
-    app: {
-      defaultExtension: 'ts',
-      main: "./main.ts",
-      meta: {
+    "app": {
+      "defaultExtension": "ts",
+      "main": "./main.ts",
+      "meta": {
         "./*.ts": {
           "format": "esm",
           "loader": "ts"
@@ -21,8 +21,8 @@ System.config({
   },
 
   map: {
-    "app": ".",
     "angular": "github:angular/bower-angular@1.6.4",
+    "app": ".",
     "ts": "github:frankwallis/plugin-typescript@7.0.6",
     "typescript": "npm:typescript@2.2.2",
     "github:jspm/nodelibs-assert@0.1.0": {
