@@ -7,7 +7,7 @@ myLib.hello();
 
 
 // when declaring a variable, we trust our environment for that variable exists.
-declare var privateData;
+declare const privateData;
 // if the variable does not exists, then the system goes in error (use strict mode)
 // console.log('privateData', privateData);
 
