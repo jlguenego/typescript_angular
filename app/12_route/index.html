@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>My First View</title>
-	</head>
-	<body ng-app="myApp" >
-		<ng-view></ng-view>
-		<script src="../../node_modules/angular/angular.min.js"></script>
-		<script src="../../node_modules/angular-route/angular-route.min.js"></script>
-		<script type="text/javascript" src="app.js"></script>
-	</body>
+
+<head>
+	<title>My First View</title>
+</head>
+
+<body ng-app="myApp">
+	<ng-view></ng-view>
+	<script src="../../jspm_packages/system.src.js"></script>
+	<script src="../../jspm.config.js"></script>
+	<script>
+		System.import('app');
+	</script>
+</body>
+
 </html>
