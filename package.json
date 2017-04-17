@@ -26,6 +26,7 @@
     "angular": "1.6.4"
   },
   "jspm": {
+    "configFile": "jspm.config.js",
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.6.4",
       "ts": "github:frankwallis/plugin-typescript@^7.0.6",
