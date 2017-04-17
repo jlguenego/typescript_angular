@@ -15,6 +15,10 @@ System.config({
         "./*.ts": {
           "format": "esm",
           "loader": "ts"
+        },
+        "./*.html": {
+          "format": "cjs",
+          "loader": "ng-template"
         }
       }
     }
@@ -24,6 +28,7 @@ System.config({
     "angular": "github:angular/bower-angular@1.6.4",
     "angular-route": "github:angular/bower-angular-route@1.6.4",
     "app": ".",
+    "ng-template": "npm:plugin-ng-template@0.1.1",
     "ts": "github:frankwallis/plugin-typescript@7.0.6",
     "typescript": "npm:typescript@2.2.2",
     "github:angular/bower-angular-route@1.6.4": {
