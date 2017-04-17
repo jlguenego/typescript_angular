@@ -4,13 +4,20 @@ declare var angular: angular.IAngularStatic;
 
 var app = angular.module('mainApp', []);
 
-app.controller('MainCtrl', function () {
-	this.object = {};
-	this.list = [];
+interface Comment {
+	select: number,
+	email: string,
+	comment: string
+}
 
-	this.add = function () {
+class MainCtrl {
+	object: Comment;
+	list: Array<Comment> = [];
+	add() {
 		this.list.push(this.object);
-		this.object = {};
-	};
-});
+		this.object = {select: 0, email: '', comment: ''};
+	}
+}
+
+app.controller('MainCtrl', MainCtrl);
 
