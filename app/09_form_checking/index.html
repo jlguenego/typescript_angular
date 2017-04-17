@@ -40,17 +40,10 @@
 			</ul>
 		</div>
 	</div>
-	<script src="../../node_modules/systemjs/dist/system.src.js"></script>
-	<script src="../system.ts.config.js"></script>
+	<script src="../../jspm_packages/system.js"></script>
+	<script src="jspm.config.js"></script>
 	<script>
-		SystemJS
-			.import('./main.ts')
-			.then(function (response) {
-				console.log('response', response);
-			})
-			.catch(function (error) {
-				console.error('error while loading systemjs file: ', error);
-			});
+		System.import('./main.ts');
 	</script>
 </body>
 

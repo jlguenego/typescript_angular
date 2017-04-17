@@ -24,5 +24,11 @@
   },
   "dependencies": {
     "angular": "1.6.4"
+  },
+  "jspm": {
+    "dependencies": {},
+    "devDependencies": {
+      "typescript": "npm:typescript@^2.0.7"
+    }
   }
 }

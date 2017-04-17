@@ -1,4 +1,5 @@
 node_modules/
+jspm_packages/
 app/**/*.js
 !app/system.config.js
 app/**/*.map
