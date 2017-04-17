@@ -15,9 +15,10 @@ System.config({
 
   packages: {
     "app": {
-      "main": "./main.ts",
-      "meta": {
-        "./main.ts": {
+       defaultExtension: 'ts',
+      main: "./main.ts",
+      meta: {
+        "./*.ts": {
           "format": "esm",
           "loader": "ts"
         }
