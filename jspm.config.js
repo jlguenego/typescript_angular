@@ -1,36 +1,37 @@
 System.config({
-  
-  meta: {
-    "./main.ts": {
-      format: "esm",
-      loader: "ts"
-    }
+  baseURL: "../../",
+  defaultJSExtensions: true,
+  //transpiler: "babel",
+  babelOptions: {
+    "optional": [
+      "runtime",
+      "optimisation.modules.system"
+    ]
   },
   paths: {
-    "github:*": "../../jspm_packages/github/*",
-    "npm:*": "../../jspm_packages/npm/*"
+    "github:*": "jspm_packages/github/*",
+    "npm:*": "jspm_packages/npm/*"
   },
 
   packages: {
-    "ts": {
-      "main": "./plugin.js"
-    },
-    "typescript": {
-      "main": "lib/typescript.js",
+    "app": {
+      "main": "./main.ts",
       "meta": {
-        "lib/typescript.js": {
-          "exports": "ts"
+        "./main.ts": {
+          "format": "esm",
+          "loader": "ts"
         }
       }
     }
   },
 
   map: {
+    "angular": "github:angular/bower-angular@1.6.4",
+    "app": ".",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.7",
     "ts": "github:frankwallis/plugin-typescript@7.0.6",
-    "ts-runtime": "npm:babel-runtime@5.8.38",
     "typescript": "npm:typescript@2.2.2",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
