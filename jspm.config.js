@@ -30,7 +30,8 @@ System.config({
     // options here.
 		module: "system",
 		noImplicitAny: true,
-		target: "es5"
+		target: "es5",
+		alwaysStrict: true
 	},
 
 	map: {
