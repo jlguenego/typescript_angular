@@ -1,4 +1,5 @@
 /// <reference path="../../node_modules/@types/angular/index.d.ts" />
+/// <reference path="../../types/jshashes.d.ts" />
 import 'angular';
 declare const angular: angular.IAngularStatic;
 
