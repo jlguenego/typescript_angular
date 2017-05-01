@@ -1,13 +1,22 @@
-'use strict';
-var app = angular.module('myApp', []);
+/// <reference path="../../node_modules/@types/angular/index.d.ts" />
+import 'angular';
+declare const angular: angular.IAngularStatic;
+
+import Hashes from 'jshashes';
+
+const app = angular.module('myApp', []);
 app.value('hash', {
-	name: 'md5',
-	compute: function (n) {
+	compute(n) {
 		return new Hashes.MD5().hex(n);
-	}
+	},
+	name: 'md5'
 });
 
-app.controller('MyController', ['hash', '$scope', function (hash, $scope) {
-	$scope.hash = hash;
-}]);
+class MyController {
+	public static $inject = ['hash', '$scope'];
+	constructor(hash, $scope) {
+		$scope.hash = hash;
+	}
+}
 
+app.controller('MyController', MyController);

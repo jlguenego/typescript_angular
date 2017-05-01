@@ -32,7 +32,8 @@
     "configFile": "jspm.config.js",
     "dependencies": {
       "angular": "github:angular/bower-angular@1.6.4",
-      "angular-route": "github:angular/bower-angular-route@1.6.4"
+      "angular-route": "github:angular/bower-angular-route@1.6.4",
+      "jshashes": "npm:jshashes@^1.0.6"
     },
     "devDependencies": {
       "ng-template": "npm:plugin-ng-template@0.1.1",

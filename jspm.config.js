@@ -28,6 +28,7 @@ System.config({
     "angular": "github:angular/bower-angular@1.6.4",
     "angular-route": "github:angular/bower-angular-route@1.6.4",
     "app": ".",
+    "jshashes": "npm:jshashes@1.0.6",
     "ng-template": "npm:plugin-ng-template@0.1.1",
     "ts": "github:frankwallis/plugin-typescript@7.0.6",
     "typescript": "npm:typescript@2.2.2",
