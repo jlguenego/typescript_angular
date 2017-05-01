@@ -3,20 +3,17 @@ import 'angular';
 import 'app/myModule.ts';
 declare const angular: angular.IAngularStatic;
 
-
-module myApp {
+namespace myApp {
 	const app = angular.module('myApp', ['myModule']);
 
 	class MyController {
-		static $inject = ['$scope', 'hello'];
+		public static $inject = ['$scope', 'hello'];
 		constructor($scope, hello) {
-			$scope.sayHello = function (name) {
+			$scope.sayHello = (name) => {
 				hello.welcome(name);
 				console.log(name);
 			};
 		}
-
-
 	}
 	app.controller('MyController', MyController);
 }

@@ -8,12 +8,12 @@ import 'angular-route';
 // You can import html file but you need to use a loader for it.
 // (ng-template loader seems to be a good choice)
 
-import {templateUrl as coverUrl} from 'app/tmpl/cover.html';
-import {templateUrl as helloUrl} from 'app/tmpl/hello.html'
-import {templateUrl as messageUrl} from 'app/tmpl/message.html';
+import { templateUrl as coverUrl } from 'app/tmpl/cover.html';
+import { templateUrl as helloUrl } from 'app/tmpl/hello.html'
+import { templateUrl as messageUrl } from 'app/tmpl/message.html';
 console.log('coverUrl', coverUrl);
 
-var app = angular.module('myApp', ['ngRoute']);
+const app = angular.module('myApp', ['ngRoute']);
 
 config.$inject = ['$routeProvider', '$locationProvider'];
 function config($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
@@ -29,23 +29,22 @@ function config($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.I
 			templateUrl: helloUrl
 		})
 		.when('/:message', {
-			templateUrl: messageUrl,
 			controller: 'MessageController',
-			controllerAs: 'ctrl'
+			controllerAs: 'ctrl',
+			templateUrl: messageUrl,
 		})
 		.otherwise({
 			redirectTo: '/'
 		});
-};
+}
 
 app.config(config);
 
 class MessageController {
-	static $inject = ['$routeParams'];
-	message: string;
+	public static $inject = ['$routeParams'];
+	public message: string;
 	constructor($routeParams: ng.route.IRouteParamsService) {
 		this.message = $routeParams.message;
 	}
 }
 app.controller('MessageController', MessageController);
-

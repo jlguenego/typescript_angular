@@ -5,7 +5,7 @@ declare const angular: angular.IAngularStatic;
 
 import 'angular-route';
 
-var app = angular.module('myApp', ['ngRoute']);
+const app = angular.module('myApp', ['ngRoute']);
 
 config.$inject = ['$routeProvider', '$locationProvider'];
 function config($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
@@ -21,23 +21,22 @@ function config($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.I
 			templateUrl: 'hello.html'
 		})
 		.when('/:message', {
-			templateUrl: 'message.html',
 			controller: 'MessageController',
-			controllerAs: 'ctrl'
+			controllerAs: 'ctrl',
+			templateUrl: 'message.html',
 		})
 		.otherwise({
 			redirectTo: '/'
 		});
-};
+}
 
 app.config(config);
 
 class MessageController {
-	static $inject = ['$routeParams'];
-	message: string;
+	public static $inject = ['$routeParams'];
+	public message: string;
 	constructor($routeParams: ng.route.IRouteParamsService) {
 		this.message = $routeParams.message;
 	}
 }
 app.controller('MessageController', MessageController);
-

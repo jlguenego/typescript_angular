@@ -13,7 +13,7 @@ import { templateUrl as helloUrl } from 'app/tmpl/hello.html'
 import { templateUrl as messageUrl } from 'app/tmpl/message.html';
 console.log('coverUrl', coverUrl);
 
-var app = angular.module('myApp', ['ngRoute']);
+const app = angular.module('myApp', ['ngRoute']);
 
 config.$inject = ['$routeProvider', '$locationProvider'];
 function config($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
@@ -29,9 +29,9 @@ function config($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.I
 			templateUrl: helloUrl
 		})
 		.when('/:message', {
-			templateUrl: messageUrl,
 			controller: 'MessageController',
-			controllerAs: 'ctrl'
+			controllerAs: 'ctrl',
+			templateUrl: messageUrl,
 		})
 		.otherwise({
 			redirectTo: '/'
@@ -41,8 +41,8 @@ function config($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.I
 app.config(config);
 
 class MessageController {
-	static $inject = ['$routeParams'];
-	message: string;
+	public static $inject = ['$routeParams'];
+	public message: string;
 	constructor($routeParams: ng.route.IRouteParamsService) {
 		this.message = $routeParams.message;
 	}

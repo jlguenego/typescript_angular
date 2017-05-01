@@ -9,7 +9,9 @@
         "quotemark": [true, "single", "avoid-escape"],
         "no-console": [false],
         "max-classes-per-file": [false],
-        "no-reference": false
+        "no-reference": false,
+        "trailing-comma": [false],
+        "no-namespace": [false]
     },
     "rulesDirectory": []
 }

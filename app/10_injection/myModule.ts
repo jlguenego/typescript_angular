@@ -1,13 +1,13 @@
-module myModule {
+namespace myModule {
 	const myModule = angular.module('myModule', []);
 
 	class HelloService {
-		static $inject = ['$window'];
-		$window;
+		public static $inject = ['$window'];
+		private $window;
 		constructor($window) {
 			this.$window = $window;
 		}
-		welcome(name) {
+		public welcome(name) {
 			this.$window.alert('Hello ' + name + '!');
 		}
 	}
