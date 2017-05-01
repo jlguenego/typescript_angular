@@ -15,4 +15,3 @@ app.controller('MyController', function MyController($scope, $http) {
 		console.log('Error', error);
 	});
 });
-

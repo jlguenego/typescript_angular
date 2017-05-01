@@ -8,9 +8,9 @@ exports.translate = function translate(load) {
 	return Promise.resolve().then(function() {
 		return ts.translate(load);
 	}).then(function(response) {
-        console.log('response', response);
-        let r2 = ngAnnotate(response, {add: true});
-        console.log('r2.src', r2.src);
-        return r2.src;
+		console.log('response', response);
+		let r2 = ngAnnotate(response, {add: true});
+		console.log('r2.src', r2.src);
+		return r2.src;
 	});
 };
