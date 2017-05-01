@@ -7,11 +7,11 @@ const app = angular.module('myApp', []);
 
 class MyTypeScriptCtrl {
 	/* @ngInject */
-	constructor(private $scope, private $http) {
+	constructor(private $scope: ng.IScope, private $http: ng.IHttpService) {
 		this.doSomething();
 	}
 	public doSomething() {
-		this.$http.get('content.json').then((response) => {
+		this.$http.get('content.json').then((response: ng.IHttpPromiseCallbackArg<{content: string}>) => {
 			this.$scope.content = response.data.content;
 			console.log('done');
 		}).catch((error) => {
