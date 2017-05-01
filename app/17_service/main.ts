@@ -15,11 +15,8 @@ app.value('hash', {
 
 class PasswordService {
 	public static $inject = ['hash', '$log'];
-	private $log;
-	private h;
-	constructor(hash, $log) {
-		this.h = hash;
-		this.$log = $log;
+
+	constructor(private h, private $log) {
 	}
 
 	public hash(login, password) {

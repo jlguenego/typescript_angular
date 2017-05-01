@@ -17,6 +17,7 @@ app.value('hash', {
 });
 
 class PasswordServiceProvider {
+	public static $inject = ['salt'];
 	public $get = ['hash', '$log', (hash, $log) => {
 		return {
 			hash(login, password) {
@@ -27,10 +28,7 @@ class PasswordServiceProvider {
 		};
 	}];
 
-	private mySalt;
-
-	constructor(salt) {
-		this.mySalt = salt;
+	constructor(private mySalt) { // notation courte !!! (cool)
 	}
 	public salt(s) {
 		if (s) {
