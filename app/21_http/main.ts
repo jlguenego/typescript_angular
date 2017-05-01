@@ -5,17 +5,14 @@ declare const angular: angular.IAngularStatic;
 
 const app = angular.module('myApp', []);
 
-class MyController {
-	public static $inject = ['$scope', '$http'];
-	constructor($scope, $http) {
-		$http.get('content.json').then((response) => {
-			$scope.content = response.data.content;
-		}).catch((error) => {
-			$scope.content = '';
-			console.log('Error', error);
-		});
-	}
-}
-
-app.controller('MyController', MyController);
+app.controller('MyController', function MyController($scope, $http) {
+	'ngInject';
+	$http.get('content.json').then((response) => {
+		$scope.content = response.data.content;
+		console.log('done');
+	}).catch((error) => {
+		$scope.content = '';
+		console.log('Error', error);
+	});
+});
 

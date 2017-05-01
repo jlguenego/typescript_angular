@@ -33,7 +33,8 @@
     "dependencies": {
       "angular": "github:angular/bower-angular@1.6.4",
       "angular-route": "github:angular/bower-angular-route@1.6.4",
-      "jshashes": "npm:jshashes@^1.0.6"
+      "jshashes": "npm:jshashes@^1.0.6",
+      "ng-annotate": "npm:ng-annotate@^1.2.1"
     },
     "devDependencies": {
       "ng-template": "npm:plugin-ng-template@0.1.1",
