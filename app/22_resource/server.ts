@@ -4,12 +4,20 @@ import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as serveIndex from 'serve-index';
 
+import * as webpack from 'webpack';
+import * as webpackDevMiddleware from 'webpack-dev-middleware';
+import * as webpackConfig from './webpack.config.js';
+
 import ws from './rest';
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+webpackConfig.output.path = '/';
+const compiler = webpack(webpackConfig);
+app.use('/app/22_resource/wpk/', webpackDevMiddleware(compiler, {}));
 
 app.use('/app/22_resource/ws/*', (req, res, next) => {
 	console.log('req.url', req.url);
