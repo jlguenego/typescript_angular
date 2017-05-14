@@ -1,5 +1,7 @@
 /// <reference path="../../node_modules/@types/angular/index.d.ts" />
 declare const angular: angular.IAngularStatic;
+import 'angular';
+import 'angular-resource';
 
 const app = angular.module('myApp', ['ngResource']);
 
