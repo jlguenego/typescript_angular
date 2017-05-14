@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>My First $resource use</title>
-		<style>
-[ng-cloak] {
-	display: none !important;
-}
-		</style>
-	</head>
 
-	<body ng-app="myApp" ng-controller="MyController as my_ctrl" ng-init="id = 2">
-		<h1>My First $resource use</h1>
-		
-		<br/>
-		<input type="text" ng-model="newTicket.name" /><button ng-click="create()">Create a new ticket</button>
-		<br/><br/>
+<head>
+	<title>My First $resource use</title>
+	<style>
+		[ng-cloak] {
+			display: none !important;
+		}
+
+	</style>
+</head>
+
+<body ng-app="myApp" ng-controller="MyController as my_ctrl" ng-init="id = 2">
+	<h1>My First $resource use</h1>
+	<br/>
+	<input type="text" ng-model="newTicket.name" /><button ng-click="create()">Create a new ticket</button>
+	<br/><br/>
+	<fieldset>
+
 		<button ng-click="query()">Rafraichir la liste des tickets</button>&nbsp;<button ng-click="empty()">Delete All</button><br/>
+
 		<table>
 			<tr>
 				<th>Id</th>
@@ -32,14 +36,19 @@
 				<td><button ng-click="delete(ticket)">Delete</button></td>
 			</tr>
 		</table>
-		
+	</fieldset>
+
+	<fieldset>
 		<input type="number" ng-model="id" /><br/>
 		<button ng-click="retrieve(id)">Retrieve the ticket</button><br/>
 		<br/>
 		<div ng-cloak>Retrieve Ticket: {{ticket}}</div>
+	</fieldset>
 
-		<script src="../../node_modules/angular/angular.js"></script>
-		<script src="../../node_modules/angular-resource/angular-resource.js"></script>
-		<script type="text/javascript" src="app.js"></script>
-	</body>
+
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="../../node_modules/angular-resource/angular-resource.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+
 </html>

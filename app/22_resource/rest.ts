@@ -22,6 +22,7 @@ router.get('/tickets', (req, res, next) => {
 
 router.delete('/tickets', (req, res, next) => {
 	tickets = [];
+	id = 1;
 	res.json({});
 });
 
