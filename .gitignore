@@ -3,4 +3,6 @@ jspm_packages/
 app/**/*.js
 !app/system.*.js
 app/**/*.map
+app/**/wpk/
+
 

@@ -13,6 +13,7 @@
 
 <body ng-app="myApp" ng-controller="MyController as my_ctrl" ng-init="id = 2">
 	<h1>My First $resource use</h1>
+	<p>Note: install webpack globally and run it to see the compiled file.</p>
 	<br/>
 	<input type="text" ng-model="newTicket.name" /><button ng-click="create()">Create a new ticket</button>
 	<br/><br/>
@@ -48,7 +49,7 @@
 
 	<script src="../../node_modules/angular/angular.js"></script>
 	<script src="../../node_modules/angular-resource/angular-resource.js"></script>
-	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="wpk/bundle.js"></script>
 </body>
 
 </html>

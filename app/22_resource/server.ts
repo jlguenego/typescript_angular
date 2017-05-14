@@ -6,7 +6,7 @@ import * as serveIndex from 'serve-index';
 
 import ws from './rest';
 
-const app: any = express();
+const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
