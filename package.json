@@ -37,7 +37,8 @@
   },
   "dependencies": {
     "angular": "1.6.4",
-    "angular-resource": "1.6.4"
+    "angular-resource": "1.6.4",
+    "jquery": "3.2.1"
   },
   "jspm": {
     "configFile": "jspm.config.js",

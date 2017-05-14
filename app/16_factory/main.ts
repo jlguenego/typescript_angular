@@ -4,7 +4,6 @@
 import 'angular';
 declare const angular: angular.IAngularStatic;
 
-
 import Hashes from 'jshashes';
 
 const app = angular.module('myApp', []);
