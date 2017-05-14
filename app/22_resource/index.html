@@ -9,14 +9,18 @@
 		</style>
 	</head>
 
-	<body ng-app="myApp" ng-controller="MyController as my_ctrl">
+	<body ng-app="myApp" ng-controller="MyController as my_ctrl" ng-init="id = 2">
 		<h1>My First $resource use</h1>
-		<button ng-click="startAjax()">Appeler le contenu AJAX</button><br/>
+		<button ng-click="query()">List the tickets</button><br/>
+		<input type="number" ng-model="id" /><button ng-click="retrieve(id)">Get the ticket</button><br/>
+		<button ng-click="create()">Create a new ticket</button><br/>
+		<button ng-click="empty()">Delete All</button><br/>
 		<button ng-click="getPromise()">logguer la promise</button><br/>
-		<span ng-cloak>{{data.content}}</span>
+		<div ng-cloak>Liste de tickets: {{list}}</div>
+		<div ng-cloak>Ticket #2: {{ticket}}</div>
 
-		<script src="../../node_modules/angular/angular.min.js"></script>
-		<script src="../../node_modules/angular-resource/angular-resource.min.js"></script>
+		<script src="../../node_modules/angular/angular.js"></script>
+		<script src="../../node_modules/angular-resource/angular-resource.js"></script>
 		<script type="text/javascript" src="app.js"></script>
 	</body>
 </html>
