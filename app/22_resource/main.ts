@@ -1,88 +1,95 @@
-/// <reference path="../../node_modules/@types/angular/index.d.ts" />
 declare const angular: angular.IAngularStatic;
 import 'angular';
 import 'angular-resource';
 
 const app = angular.module('myApp', ['ngResource']);
 
-app.controller('MyController', ($scope, $resource) => {
-	'ngInject';
-	$scope.data = undefined;
-	const Ticket = $resource('ws/tickets/:id', {
-		id: '@id'
-	}, {
-			update: {
-				method: 'PUT'
-			}
-		});
-	console.log('Ticket', Ticket);
+class MyController {
+	/* @ngInject */
+	public tickets;
+	public ticket;
+	public newTicket;
+	private ticketResource: any;
 
-	$scope.query = () => {
-		Ticket.query().$promise.then((tickets) => {
-			$scope.tickets = tickets;
+	constructor(private $scope: ng.IScope, private $resource: ng.resource.IResourceService) {
+		this.ticketResource = $resource('ws/tickets/:id', {
+			id: '@id'
+		}, {
+				update: {
+					method: 'PUT'
+				}
+			});
+		this.query();
+	}
+
+	public query() {
+		this.ticketResource.query().$promise.then((tickets) => {
+			this.tickets = tickets;
 		}).catch((error) => {
 			console.error('error', error);
 		});
 		console.log('appel query en cours...');
-	};
-	$scope.query();
+	}
 
-	$scope.create = () => {
-		Ticket.save($scope.newTicket).$promise.then(() => {
-			$scope.query();
+	public create() {
+		this.ticketResource.save(this.newTicket).$promise.then(() => {
+			this.query();
 		}).catch((error) => {
 			console.error('error', error);
 		});
 		console.log('appel create en cours...');
-	};
+	}
 
-	$scope.retrieve = (id) => {
-		Ticket.get({
+	public retrieve(id) {
+		this.ticketResource.get({
 			id
 		}).$promise.then((ticket) => {
 			console.log('ticket', ticket);
-			$scope.ticket = ticket;
+			this.ticket = ticket;
 		}).catch((error) => {
 			console.error('error', error);
 		});
 		console.log('appel retrieve en cours...');
-	};
+	}
 
-	$scope.update = (ticket) => {
-		Ticket.update({
+	public update(ticket) {
+		this.ticketResource.update({
 			id: ticket.id,
 			name: ticket.newName
 			// tslint:disable-next-line:no-shadowed-variable
 		}).$promise.then((ticket) => {
 			console.log('ticket', ticket);
-			$scope.ticket = ticket;
-			$scope.query();
+			this.ticket = ticket;
+			this.query();
 		}).catch((error) => {
 			console.error('error', error);
 		});
 		console.log('appel update en cours...');
-	};
+	}
 
-	$scope.delete = (ticket) => {
-		Ticket.delete({
+	public delete(ticket) {
+		this.ticketResource.delete({
 			id: ticket.id
 			// tslint:disable-next-line:no-shadowed-variable
 		}).$promise.then((ticket) => {
 			console.log('ticket', ticket);
-			$scope.ticket = ticket;
-			$scope.query();
+			this.ticket = ticket;
+			this.query();
 		}).catch((error) => {
 			console.error('error', error);
 		});
 		console.log('appel delete en cours...');
-	};
+	}
 
-	$scope.empty = (d) => {
-		Ticket.delete().$promise.then(() => {
-			$scope.query();
+	public empty(d) {
+		this.ticketResource.delete().$promise.then(() => {
+			this.query();
 		}).catch((error) => {
 			console.error('error', error);
 		});
 		console.log('appel delete all en cours...');
-	};
-});
+	}
+
+}
+
+app.controller('MyController', MyController);
