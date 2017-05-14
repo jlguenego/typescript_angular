@@ -20,7 +20,7 @@ System.config({
       "meta": {
         "./*.ts": {
           "format": "esm",
-          "loader": "ts-ng-annotate" // instead of "ts"
+          "loader": "ts-ng-annotate"
         },
         "./*.html": {
           "format": "cjs",
