@@ -2,6 +2,7 @@
 
 import * as express from 'express';
 const router = express.Router();
+export default router;
 
 interface ITicket {
 	name: string;
@@ -19,10 +20,26 @@ router.get('/tickets', (req, res, next) => {
 	res.json(tickets);
 });
 
+router.delete('/tickets', (req, res, next) => {
+	tickets = [];
+	res.json({});
+});
+
+
+// Creation
+router.post('/tickets', (req, res, next) => {
+	const ticket = req.body;
+	ticket.id = id;
+	id++;
+	tickets.push(ticket);
+	res.status(201);
+	res.json(ticket);
+});
+
 router.get('/tickets/:id', (req, res, next) => {
-	const ticket = tickets.filter((n) => {
+	const ticket = tickets.find((n) => {
 		return n.id === Number(req.params.id);
-	})[0];
+	});
 	if (ticket === undefined) {
 		res.sendStatus(404);
 	}
@@ -30,29 +47,39 @@ router.get('/tickets/:id', (req, res, next) => {
 	res.json(ticket);
 });
 
-router.get('/tickets/:id', (req, res, next) => {
-	const ticket = tickets.filter((n) => {
-		console.log('n', n);
-		console.log('req.params.id', req.params.id);
+router.put('/tickets/:id', (req, res, next) => {
+	console.log('update req.body', req.body);
+	const ticket = tickets.find((n) => {
 		return n.id === Number(req.params.id);
-	})[0];
+	});
+	if (!ticket) {
+		res.sendStatus(404);
+		return;
+	}
+	ticket.name = req.body.name;
 	console.log('ticket', ticket);
 	res.json(ticket);
 });
 
-router.post('/tickets', (req, res, next) => {
-	const ticket = req.body;
-	ticket.id = id;
-	id++;
-	tickets.push(ticket);
+router.delete('/tickets/:id', (req, res, next) => {
+	const ticket = tickets.find((n) => {
+		return n.id === Number(req.params.id);
+	});
+	if (!ticket) {
+		res.sendStatus(404);
+		return;
+	}
+	const index: number = tickets.findIndex((n) => {
+		return n.id === Number(req.params.id);
+	});
+	tickets.splice(index, 1);
 	res.json(ticket);
 });
 
-router.delete('/tickets', (req, res, next) => {
-	tickets = [];
-	res.json({});
-});
 
-export default router;
+
+
+
+
 
 

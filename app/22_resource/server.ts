@@ -15,7 +15,7 @@ app.use('/app/22_resource/ws/*', (req, res, next) => {
 	console.log('req.url', req.url);
 	setTimeout(() => {
 		next();
-	}, 2000);
+	}, 1000);
 });
 
 app.use('/app/22_resource/ws', ws);

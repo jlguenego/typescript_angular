@@ -11,13 +11,32 @@
 
 	<body ng-app="myApp" ng-controller="MyController as my_ctrl" ng-init="id = 2">
 		<h1>My First $resource use</h1>
-		<button ng-click="query()">List the tickets</button><br/>
-		<input type="number" ng-model="id" /><button ng-click="retrieve(id)">Get the ticket</button><br/>
-		<button ng-click="create()">Create a new ticket</button><br/>
-		<button ng-click="empty()">Delete All</button><br/>
-		<button ng-click="getPromise()">logguer la promise</button><br/>
-		<div ng-cloak>Liste de tickets: {{list}}</div>
-		<div ng-cloak>Ticket #2: {{ticket}}</div>
+		
+		<br/>
+		<input type="text" ng-model="newTicket.name" /><button ng-click="create()">Create a new ticket</button>
+		<br/><br/>
+		<button ng-click="query()">Rafraichir la liste des tickets</button>&nbsp;<button ng-click="empty()">Delete All</button><br/>
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>New name</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+			<tr ng-repeat="ticket in tickets track by $index">
+				<td>{{ticket.id}}</td>
+				<td>{{ticket.name}}</td>
+				<td><input type="text" ng-model="ticket.newName" /></td>
+				<td><button ng-click="update(ticket)">Update</button></td>
+				<td><button ng-click="delete(ticket)">Delete</button></td>
+			</tr>
+		</table>
+		
+		<input type="number" ng-model="id" /><br/>
+		<button ng-click="retrieve(id)">Retrieve the ticket</button><br/>
+		<br/>
+		<div ng-cloak>Retrieve Ticket: {{ticket}}</div>
 
 		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/angular-resource/angular-resource.js"></script>
