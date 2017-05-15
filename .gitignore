@@ -6,4 +6,5 @@ app/**/*.map
 app/**/wpk/
 !app/23*/*.js
 !karma*.js
+coverage/
 

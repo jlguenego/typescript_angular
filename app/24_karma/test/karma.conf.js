@@ -5,8 +5,7 @@ module.exports = function(config) {
 
 		basePath: '../../../',
 
-		files: [
-			{
+		files: [{
 				pattern: 'app/24_karma/app/*.ts'
 			},
 			{
@@ -15,7 +14,7 @@ module.exports = function(config) {
 		],
 
 		preprocessors: {
-			'**/*.ts': ['karma-typescript'],
+			'**/*.ts': ['karma-typescript', 'coverage'],
 		},
 
 		frameworks: ['jasmine', 'karma-typescript'],
@@ -23,9 +22,15 @@ module.exports = function(config) {
 		browsers: ['Chrome'],
 
 		karmaTypescriptConfig: {
-            tsconfig: "app/24_karma/test/tsconfig.json"
-        },
+			tsconfig: "app/24_karma/test/tsconfig.json"
+		},
 
+		reporters: ['progress', 'coverage'],
+
+		coverageReporter: {
+			type: 'html',
+			dir: 'coverage/'
+		}
 
 	});
 };
