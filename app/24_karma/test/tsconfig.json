@@ -13,6 +13,7 @@
     "allowJs": true
   },
   "include": [
-    "../app/*.ts"
+    "../app/*.ts",
+    "./unit/*.ts"
   ]
 }
