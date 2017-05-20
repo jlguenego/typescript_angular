@@ -2,6 +2,7 @@ node_modules/
 jspm_packages/
 app/**/*.js
 !app/system.*.js
+!app/**/webpack.config.js
 app/**/*.map
 app/**/wpk/
 !app/23*/*.js
